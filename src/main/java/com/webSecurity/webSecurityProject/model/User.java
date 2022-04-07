@@ -19,8 +19,8 @@ public class User {
 	private String prenom;
 	private int age;
 	
-	@OneToMany(mappedBy = "client",cascade = CascadeType.ALL)
-    private List<Command> commands;
+//	@OneToMany(mappedBy = "client",cascade = CascadeType.ALL)
+//    private List<Command> commands;
 	
 	public User() {
 		super();

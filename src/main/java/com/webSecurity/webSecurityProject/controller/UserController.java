@@ -34,6 +34,8 @@ public class UserController {
 	@Autowired
 	  CommandServiceImp commandServiceImp;
     
+//----------------user controller----------------------
+	
     @PostMapping("/users")
     public ResponseEntity<?> AddUser(@RequestBody User user) {
       userServiceImp.addUser(user);
@@ -64,6 +66,8 @@ public class UserController {
       return ResponseEntity.ok().body(userServiceImp.SearchUserById(id));
     }
     
+  //----------------command controller----------------------
+    
     @PostMapping("/commands")
     public ResponseEntity<?> AddCommand(@RequestBody Command command) {
         commandServiceImp.addCommand(command);
@@ -92,6 +96,13 @@ public class UserController {
       public ResponseEntity<?> GetCommandById(@PathVariable("id") Long id) {
          
         return ResponseEntity.ok().body(commandServiceImp.SearchCommandById(id));
+      }
+      
+    //----------------recherche command par client controller----------------------
+      @GetMapping("/users/{id}/commands")
+      public ResponseEntity<?> GetCommandsByUser(@PathVariable("id") Long id) {
+        return ResponseEntity.ok()
+        		.body(commandRepository.findAllByClient(userRepository.findById(id).get()));
       }
 	
 }
