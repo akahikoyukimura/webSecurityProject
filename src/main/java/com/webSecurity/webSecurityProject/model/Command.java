@@ -11,10 +11,15 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 @Entity
 public class Command {
 
 	private @Id @GeneratedValue(strategy = GenerationType.IDENTITY) Long id;
+	@JsonFormat(pattern="yyyy-MM-dd")
 	private Date date;
 	
 	
