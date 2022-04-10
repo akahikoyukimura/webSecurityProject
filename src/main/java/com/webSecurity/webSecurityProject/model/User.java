@@ -11,6 +11,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 @Entity
 public class User {
 
@@ -19,8 +22,9 @@ public class User {
 	private String prenom;
 	private int age;
 	
-//	@OneToMany(mappedBy = "client",cascade = CascadeType.ALL)
-//    private List<Command> commands;
+	@OneToMany(mappedBy = "client",cascade = CascadeType.ALL)
+	@OnDelete(action = OnDeleteAction.CASCADE)
+    private List<Command> commands;
 	
 	public User() {
 		super();
