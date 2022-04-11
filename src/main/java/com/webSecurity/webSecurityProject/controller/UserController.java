@@ -20,7 +20,7 @@ import com.webSecurity.webSecurityProject.repositories.UserRepository;
 import com.webSecurity.webSecurityProject.services.CommandServiceImp;
 import com.webSecurity.webSecurityProject.services.UserServiceImp;
 
-@CrossOrigin(origins = "http://localhost:3000/")
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping(path = "/api")
 public class UserController {
