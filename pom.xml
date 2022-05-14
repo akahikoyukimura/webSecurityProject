@@ -47,6 +47,12 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		
+		<dependency>
+    <groupId>jmagick</groupId>
+    <artifactId>jmagick</artifactId>
+    <version>6.6.9</version>
+</dependency>
 	</dependencies>
 
 	<build>
