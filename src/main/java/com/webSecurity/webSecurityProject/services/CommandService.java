@@ -3,7 +3,6 @@ package com.webSecurity.webSecurityProject.services;
 import java.util.List;
 
 import com.webSecurity.webSecurityProject.model.Command;
-import com.webSecurity.webSecurityProject.model.User;
 
 public interface CommandService {
 
