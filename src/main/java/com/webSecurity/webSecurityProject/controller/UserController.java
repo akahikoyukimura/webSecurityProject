@@ -125,5 +125,12 @@ public class UserController {
       public ResponseEntity<?> CommandExecution(@PathVariable("ip") String ip)  {
     	  return pingService.pingIP(ip);
         }
+      
+      //--------------------------------reception-----------------------------------------
+      @GetMapping("/reception/{id}")
+      public ResponseEntity<?> Reception(@PathVariable("id") Long id) {
+        return ResponseEntity.ok()
+        		.body(commandRepository.findAllCommandsClient(id));
+      }
 	
 }

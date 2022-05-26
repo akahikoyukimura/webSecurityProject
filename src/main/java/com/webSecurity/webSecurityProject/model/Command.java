@@ -17,6 +17,7 @@ public class Command {
 	private @Id @GeneratedValue(strategy = GenerationType.IDENTITY) Long id;
 	@JsonFormat(pattern="yyyy-MM-dd")
 	private Date date;
+	private String libelle;
 	
 	
 	@ManyToOne
@@ -49,6 +50,12 @@ public class Command {
 	}
 	public void setClient(User client) {
 		this.client = client;
+	}
+	public String getLibelle() {
+		return libelle;
+	}
+	public void setLibelle(String libelle) {
+		this.libelle = libelle;
 	}
 	
 	
